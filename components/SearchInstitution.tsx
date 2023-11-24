@@ -25,7 +25,7 @@ const SearchInstitution = ({
   return (
     <div className="search-manufacturer">
       <Combobox value={institution} onChange={setInstitution}>
-        <div className="relative w-full">
+        <div className="relative bg-slate-100 rounded-lg shadow-lg w-full">
           <Combobox.Button className="absolute top-[14px]">
             <Image
               src="/museum.png"
@@ -38,7 +38,7 @@ const SearchInstitution = ({
 
           <Combobox.Input
             className="search-manufacturer__input"
-            placeholder="Instituição"
+            placeholder="Procurar por Título..."
             displayValue={(item: string) => item}
             onChange={(e) => setQuery(e.target.value)}
           />

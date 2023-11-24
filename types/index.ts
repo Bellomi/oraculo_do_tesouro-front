@@ -5,6 +5,7 @@ export interface CustomButtonProps {
   containerStyles?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   btnType?: "button" | "submit";
+  textStyles?: string;
 }
 
 export interface InstitutionProps {
@@ -33,4 +34,9 @@ export interface MarketProps {
       volume_24h: number;
     };
   };
+}
+
+export interface FilterProps {
+  institution: string;
+  limit: number;
 }

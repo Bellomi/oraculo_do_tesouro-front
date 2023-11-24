@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@nextui-org/react": "^2.2.9",
     "chart.js": "^4.4.0",
+    "framer-motion": "^10.16.5",
     "next": "14.0.3",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
