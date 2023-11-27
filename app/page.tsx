@@ -7,7 +7,8 @@ import MarketCard from "@/components/MarketCard";
 import InstitutionContact from "@/components/InstitutionContact";
 import LineChart from "@/components/LineChart";
 import OracleTable from "@/components/OracleTable";
-import { MarketProps } from "@/types";
+import SearchInstitution from "@/components/SearchInstitution";
+import ActualValue from "@/components/ActualValue";
 
 export default async function Home({ searchParams }) {
   const allMarkets = await fetchCoins({
@@ -21,15 +22,14 @@ export default async function Home({ searchParams }) {
   // console.log(allMarkets);
 
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden mx-20">
       <div className="home__filters">
-        <Searchbar />
-
-        <div className="home__filter-container">
-          <CustomFilter title="instituição" />
-        </div>
+        <SearchInstitution />
       </div>
-      <Hero />
+      <div className="ml-10 px-20">
+        <Hero title="" />
+        <ActualValue />
+      </div>
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
           <h1 className="text-4xl font-bold">Oráculos</h1>
@@ -44,7 +44,7 @@ export default async function Home({ searchParams }) {
             títulos, para obter o preço mais recente. Ele então fornece essa
             informação ao contrato ou sistema, permitindo que ele execute lógica
             de negócios com base no valor atualizado do Título do Tesouro
-            Direto.{" "}
+            Direto.
           </h2>
         </div>
 
@@ -66,8 +66,8 @@ export default async function Home({ searchParams }) {
       <LineChart />
       {!isDataEmpty ? (
         <div>
-          {allMarkets.slice(0, 20).map((market) => (
-            <OracleTable key={market.exchange_id} market={market} />
+          {allMarkets.slice(0, 10).map((market) => (
+            <OracleTable key={market.exchange_name} market={market} />
           ))}
         </div>
       ) : (

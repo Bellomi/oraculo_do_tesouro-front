@@ -12,10 +12,7 @@ interface MarketCardProps {
 
 const MarketCard = ({ market }: MarketCardProps) => {
   const {
-    exchange_id,
     exchange_name,
-    pair,
-    base_currency_name,
     adjusted_volume_24h_share,
     quotes,
     trust_score,
@@ -28,14 +25,14 @@ const MarketCard = ({ market }: MarketCardProps) => {
 
   return (
     <div className="market-card group relative shadow-2xl border-[1px] bg-slate-110 ">
-      <div className="flex p-4 flex-col">
+      <div className="flex p-4 flex-col w-full">
         <h2 className="market-card__content-title">{exchange_name}</h2>
-        <h3 className="market-card__price">${usdQuote.price}</h3>
+        <h3 className="market-card__price"> {usdQuote.price.toFixed(2)}</h3>
         <div className="flex mt-4 flex-row">
-          <FcApproval className="mt-2 mr-2" />
-          <p className="text-xs font-bold mt-2">
+          {/* <FcApproval className="mt-2 mr-2" /> */}
+          {/* <p className="text-xs font-bold mt-2">
             Ultima Atualizaçao: {formattedDate}
-          </p>
+          </p> */}
         </div>
         <div className="relative h-10 flex justify-end items-end">
           <CustomButton
